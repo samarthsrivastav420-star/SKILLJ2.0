@@ -221,47 +221,63 @@ export const MobileAppExportModal: React.FC<MobileAppExportModalProps> = ({
               Export native Android build artifacts for direct side-loading (.apk) or Google Play Store console upload (.aab bundle):
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* APK Card */}
-              <div className="rounded-2xl border border-slate-200 p-4 space-y-3 bg-slate-50 hover:border-red-300 transition">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-black text-slate-900">skillj-release.apk</span>
-                  <span className="text-[10px] font-bold text-red-600 bg-red-100 px-2 py-0.5 rounded-full">
-                    Direct Sideload
-                  </span>
+            {/* PWABuilder 1-Click Card */}
+            <div className="rounded-2xl border-2 border-red-500 bg-red-50/50 p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-7 w-7 rounded-lg bg-red-600 text-white flex items-center justify-center font-black text-xs">
+                    PWA
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-black text-slate-900">PWABuilder Instant Package (Recommended)</h5>
+                    <p className="text-[10px] text-slate-500">Official Microsoft & Google TWA Engine • Zero Ads</p>
+                  </div>
                 </div>
-                <p className="text-[11px] text-slate-500">
-                  Ready-to-install Android Application Package. Works directly on any phone without Google Play.
-                </p>
-                <button
-                  onClick={handleDownloadApk}
-                  disabled={downloadingApk}
-                  className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition cursor-pointer disabled:opacity-50"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>{downloadingApk ? 'Generating Package...' : 'Download APK (v1.0.0)'}</span>
-                </button>
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                  100% Free & Store-Ready
+                </span>
               </div>
+              <p className="text-[11px] text-slate-600">
+                PWA Manifest has been updated with your real mobile screenshots, 512px icons, and standalone configuration. Click below to generate your signed APK and Google Play AAB bundle in 1 minute:
+              </p>
+              <a
+                href="https://www.pwabuilder.com?url=https://ais-pre-nova7ngncixqntvaydslmv-883630275988.asia-southeast1.run.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-black shadow-md shadow-red-600/20 transition cursor-pointer"
+              >
+                <Globe className="w-4 h-4" />
+                <span>Open in PWABuilder (1-Click APK & AAB) →</span>
+              </a>
+            </div>
 
-              {/* AAB Card */}
-              <div className="rounded-2xl border border-slate-200 p-4 space-y-3 bg-slate-50 hover:border-red-300 transition">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-black text-slate-900">skillj-release.aab</span>
-                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                    Google Play Store
-                  </span>
+            {/* Screenshots Preview Gallery */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-slate-900">Real App Screenshots (In Manifest)</span>
+                <span className="text-[10px] text-slate-500 font-medium">5 Mobile Views Configured</span>
+              </div>
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+                <div className="shrink-0 w-24 rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-100">
+                  <img src="/screenshots/screenshot-1.jpg" alt="Home Screen" className="w-full h-auto object-cover" />
+                  <p className="text-[9px] font-bold text-slate-700 text-center py-1 bg-white">Home Page</p>
                 </div>
-                <p className="text-[11px] text-slate-500">
-                  Official Android App Bundle with dynamic asset splitting for Play Console publishing.
-                </p>
-                <button
-                  onClick={handleDownloadAab}
-                  disabled={downloadingAab}
-                  className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold transition cursor-pointer disabled:opacity-50"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>{downloadingAab ? 'Compiling Bundle...' : 'Download AAB Bundle'}</span>
-                </button>
+                <div className="shrink-0 w-24 rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-100">
+                  <img src="/screenshots/screenshot-2.jpg" alt="Student Access" className="w-full h-auto object-cover" />
+                  <p className="text-[9px] font-bold text-slate-700 text-center py-1 bg-white">Student Login</p>
+                </div>
+                <div className="shrink-0 w-24 rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-100">
+                  <img src="/screenshots/screenshot-3.jpg" alt="Teacher Registration" className="w-full h-auto object-cover" />
+                  <p className="text-[9px] font-bold text-slate-700 text-center py-1 bg-white">Teacher Portal</p>
+                </div>
+                <div className="shrink-0 w-24 rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-100">
+                  <img src="/screenshots/screenshot-4.jpg" alt="Skill Track" className="w-full h-auto object-cover" />
+                  <p className="text-[9px] font-bold text-slate-700 text-center py-1 bg-white">Skill Track</p>
+                </div>
+                <div className="shrink-0 w-24 rounded-xl border border-slate-200 overflow-hidden shadow-xs bg-slate-100">
+                  <img src="/screenshots/screenshot-5.jpg" alt="Education Track" className="w-full h-auto object-cover" />
+                  <p className="text-[9px] font-bold text-slate-700 text-center py-1 bg-white">Education</p>
+                </div>
               </div>
             </div>
 
