@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/private/
+Sitemap: https://skillj.universe.app/sitemap.xml

@@ -1,0 +1,6 @@
+{
+  "name": "SKILLJ - UNIVERSE Learning & Teaching Platform",
+  "description": "SKILLJ by UNIVERSE is a premier online learning and teaching platform. Learn, teach, and grow with interactive classes, verified educators, examinations, and official certifications.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
